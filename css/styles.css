@@ -1,30 +1,124 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 
-body {
-  font-family: "Open Sans", sans-serif !important;
-    background-color: #ffffff;
-    color: #333333;
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* Navbar Custom Styling */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+}
+
+body {
+    font-family: "Open Sans", sans-serif;
+    background-color: #ffffff;
+    color: #333333;
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    text-decoration: none;
+}
+
+section {
+    width: 100%;
+}
+
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
 .navbar {
     background-color: #074643 !important;
     padding: 1rem 4rem;
 }
 
-.navbar-brand, .nav-link {
-    color: white !important;
+.navbar-brand,
+.nav-link {
+    color: #ffffff !important;
     font-weight: 500;
 }
 
+.navbar-nav {
+    gap: 15px;
+}
 
-/* Hero Section */
+.navbar-nav .nav-item .nav-link {
+    position: relative;
+    padding: 8px 10px 5px;
+}
+
+
+/* Navbar Hover Line */
+
+.navbar-nav .nav-item .nav-link::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    background-color: #ffffff;
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+.navbar-nav .nav-item .nav-link:hover::after {
+    width: 60%;
+    left: 20%;
+}
+
+
+/* Navbar Toggler */
+
+.navbar-toggler {
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+
+.navbar-toggler-icon {
+    filter: brightness(0) invert(1);
+}
+
+
+/* Logo */
+
+.logo {
+    width: 20%;
+    min-width: 100px;
+    max-width: 150px;
+    height: auto;
+}
+
+
+/* =========================================================
+   HERO SECTION
+========================================================= */
+
 .hero-section {
     padding: 80px 0;
     min-height: 80vh;
     display: flex;
     align-items: center;
+}
+
+.iam {
+    font-size: 2rem;
+    margin-bottom: 10px;
 }
 
 .highlight-text {
@@ -35,6 +129,7 @@ body {
 .hero-title {
     font-size: 2.5rem;
     font-weight: 700;
+    line-height: 1.3;
     margin-bottom: 1.5rem;
 }
 
@@ -45,31 +140,40 @@ body {
     margin-bottom: 2rem;
 }
 
-/* Buttons */
+
+/* =========================================================
+   HERO BUTTONS
+========================================================= */
+
 .btn-custom-primary {
     background-color: #074643;
-    color: white;
+    color: #ffffff;
     font-weight: 500;
     border: none;
     padding: 10px 30px;
     border-radius: 30px;
     margin-right: 15px;
     transition: all 0.3s ease;
-       display: inline-flex;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    
+    gap: 8px;
 }
 
 .btn-custom-primary:hover {
     background-color: #17635f;
-    color: #fffdfd;
+    color: #ffffff;
 }
+
+.btn-custom-primary i {
+    transition: transform 0.4s ease;
+}
+
 .btn-custom-primary:hover i {
-   transform: translateX(10px);
-   transition: all .5s linear;
+    transform: translateX(8px);
 }
+
 
 .btn-custom-secondary {
     background-color: transparent;
@@ -82,13 +186,15 @@ body {
 }
 
 .btn-custom-secondary:hover {
-background-color: #17635f;
-    color: #fffdfd;
+    background-color: #17635f;
+    color: #ffffff;
 }
 
 
+/* =========================================================
+   PROFILE IMAGE
+========================================================= */
 
-/* Profile Image Container */
 .profile-img-container {
     width: 350px;
     height: 350px;
@@ -102,24 +208,26 @@ background-color: #17635f;
     width: 100%;
     height: 100%;
     object-fit: cover;
+    display: block;
 }
-.logo{
-    width: 20%;
-}
-.iam{
-    font-size: 2rem;
-}
-/* About Me Section Styling */
+
+
+/* =========================================================
+   ABOUT SECTION
+========================================================= */
+
 .about-section {
     background-color: #ffffff;
     border-top: 2px solid #074643;
     border-bottom: 2px solid #074643;
+    padding: 80px 0;
 }
 
 .about-title {
     font-size: 2.2rem;
     font-weight: 700;
     color: #074643;
+    margin-bottom: 20px;
 }
 
 .about-desc {
@@ -129,33 +237,53 @@ background-color: #17635f;
     line-height: 1.8;
 }
 
-/* Perfect Circular Image Wrapper like Image */
+
+/* =========================================================
+   ABOUT IMAGE
+========================================================= */
+
+/*
+   IMPORTANT:
+   Only ONE .about-img-container definition
+   is used here.
+*/
+
 .about-img-container {
     width: 350px;
     height: 350px;
     border-radius: 50%;
     overflow: hidden;
-    border: 2px solid #cccccc;
     margin: 0 auto;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 20px;
+    padding: 0;
+    background-color: #ffffff;
 }
 
 .about-img-container img {
     width: 100%;
     height: 100%;
+    max-width: none;
+    max-height: none;
     object-fit: contain;
+    display: block;
 }
 
-/* Badges Styling inspired by layout */
+
+/* =========================================================
+   ABOUT BADGES
+========================================================= */
+
 .info-badge {
     border: 1px solid #cccccc;
     padding: 10px 20px;
     border-radius: 15px;
     font-size: 0.95rem;
     font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
 }
 
 .font-teal {
@@ -169,6 +297,7 @@ background-color: #17635f;
     display: inline-flex;
     gap: 15px;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .skill-item {
@@ -180,32 +309,42 @@ background-color: #17635f;
     color: #074643;
 }
 
-/* Visual color dots acting as tech indicators */
 .skill-item::before {
-    content: '';
+    content: "";
     width: 8px;
     height: 8px;
     border-radius: 50%;
     display: inline-block;
 }
 
-.html-dot::before { background-color: #e34c26; } /* HTML Orange */
-.css-dot::before { background-color: #264de4; }  /* CSS Blue */
-.bs-dot::before { background-color: #563d7c; }   /* Bootstrap Purple */
+.html-dot::before {
+    background-color: #e34c26;
+}
 
-/* New Git and GitHub dots added below */
-.git-dot::before { background-color: #f05032; }   /* Git Red/Orange */
-.github-dot::before { background-color: #24292e; }/* GitHub Black */
+.css-dot::before {
+    background-color: #264de4;
+}
+
+.bs-dot::before {
+    background-color: #563d7c;
+}
+
+.git-dot::before {
+    background-color: #f05032;
+}
+
+.github-dot::before {
+    background-color: #24292e;
+}
 
 
-.html-dot::before { background-color: #e34c26; } /* HTML Orange */
-.css-dot::before { background-color: #264de4; }  /* CSS Blue */
-.bs-dot::before { background-color: #563d7c; }   /* Bootstrap Purple */
+/* =========================================================
+   EDUCATION
+========================================================= */
 
-
-/* Education Timeline Main Container */
 .education-section {
     background-color: #fcfcfc !important;
+    padding: 80px 0;
 }
 
 .section-title {
@@ -221,9 +360,8 @@ background-color: #17635f;
     padding-left: 50px;
 }
 
-/* Vertical Timeline Track Line */
 .timeline-container::before {
-    content: '';
+    content: "";
     position: absolute;
     left: 20px;
     top: 15px;
@@ -232,14 +370,17 @@ background-color: #17635f;
     background-color: #074643;
 }
 
-/* Individual Timeline Card Entry */
 .timeline-item {
     position: relative;
     margin-bottom: 50px;
 }
 
-/* Yellow circular icons matching your shared diagram template */
-.timeline-icon, .timeline-icon-grad {
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+.timeline-icon,
+.timeline-icon-grad {
     position: absolute;
     left: -50px;
     top: 5px;
@@ -251,7 +392,7 @@ background-color: #17635f;
     align-items: center;
     justify-content: center;
     font-size: 1.1rem;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     z-index: 2;
 }
 
@@ -265,6 +406,7 @@ background-color: #17635f;
     font-weight: 700;
     color: #000000;
     min-width: 180px;
+    margin-bottom: 0;
 }
 
 .edu-arrow {
@@ -284,34 +426,17 @@ background-color: #17635f;
     font-size: 1rem;
     color: #555555;
     font-weight: 500;
-    margin: 3px 0 0 0;
+    margin: 3px 0 0;
 }
 
-/* Responsive Alignment Fix for Smaller Devices */
-@media (max-width: 768px) {
-    .timeline-container {
-        padding-left: 40px;
-    }
-    .timeline-container::before {
-        left: 15px;
-    }
-    .timeline-icon, .timeline-icon-grad {
-        left: -43px;
-        width: 34px;
-        height: 34px;
-        font-size: 0.9rem;
-    }
-    .edu-arrow {
-        display: none;
-    }
-    .edu-degree {
-        width: 100%;
-        margin-bottom: 5px;
-    }
-}
-/* Skills Section Grid Styling */
+
+/* =========================================================
+   SKILLS SECTION
+========================================================= */
+
 .skills-section {
     padding: 80px 0;
+    background-color: #ffffff;
 }
 
 .skill-card {
@@ -321,6 +446,7 @@ background-color: #17635f;
     padding: 30px 20px;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    height: 100%;
 }
 
 .skill-card:hover {
@@ -329,68 +455,103 @@ background-color: #17635f;
     border-color: #f6fafa;
     background-color: #1a5f5c;
 }
-/* Fix: Removed the space between the classes and added !important to override the glow background */
+
+.skill-card:hover .skill-name {
+    color: #ffffff !important;
+}
+
+.skill-card:hover .status-badge {
+    background-color: rgba(255, 255, 255, 0.2) !important;
+    color: #ffffff !important;
+}
+
+
+/* Learning Card */
+
+.learning-glow {
+    border: 1px dashed #f4be41 !important;
+    background-color: rgba(244, 190, 65, 0.02) !important;
+}
+
 .skill-card.learning-glow:hover {
     transform: translateY(-8px);
     box-shadow: 0 12px 24px rgba(7, 70, 67, 0.1);
-    border-color: #f6fafa !important; /* Force border color change */
-    background-color: #1a5f5c !important; /* Force dark green background change */
+    border-color: #f6fafa !important;
+    background-color: #1a5f5c !important;
 }
 
-/* Ensure the text turns white on hover just like the other cards */
 .skill-card.learning-glow:hover .skill-name {
     color: #ffffff !important;
 }
 
-/* Ensure the 'Learning Currently' badge adapts nicely to the dark background */
 .skill-card.learning-glow:hover .badge-learning {
     background-color: rgba(255, 255, 255, 0.2) !important;
     color: #ffffff !important;
 }
 
 
-/* Custom Highlight Effect for currently learning technology */
-.learning-glow {
-    border: 1px dashed #f4be41 !important;
-    background-color: rgba(244, 190, 65, 0.02) !important;
-}
+/* Skill Icon */
 
-.learning-glow:hover {
-    border-color: #074643 !important;
-}
-
-/* Central Skill Icon Badges */
-/* Purane .skill-icon code ko hata kar ye paste karein */
 .skill-icon {
-    width: 85px;          /* Size thoda bada kiya taake text andar aa jaye */
+    width: 85px;
     height: 85px;
-    margin: 0 auto 20px auto;
+    margin: 0 auto 20px;
     border-radius: 14px;
     display: flex;
-    flex-direction: column; /* Text aur number ko upar-niche align karne ke liye */
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    font-size: 0.85rem;   /* Font size ko barabar balance kiya */
+    font-size: 0.85rem;
     font-weight: 700;
-    color: white;
+    color: #ffffff;
     padding: 5px;
     text-align: center;
-    word-break: break-word; /* Agar text bada ho to automatic handle ho jaye */
+    word-break: break-word;
     line-height: 1.2;
 }
 
-/* Icons ke andar ka margin set karne ke liye */
+.skill-icon i {
+    font-size: 28px;
+    margin-bottom: 4px;
+}
+
 .skill-icon span {
     display: block;
     width: 100%;
 }
 
 
-/* Distinctive Branding Skill Identity Colors */
-.html-bg { background-color: #e34c26; }
-.css-bg  { background-color: #264de4; }
-.bs-bg   { background-color: #563d7c; }
-.js-bg   { background-color: #f7df1e; color: #000000 !important; }
+/* Skill Colors */
+
+.html-bg {
+    background-color: #e34c26;
+}
+
+.css-bg {
+    background-color: #264de4;
+}
+
+.bs-bg {
+    background-color: #563d7c;
+}
+
+.js-bg {
+    background-color: #f7df1e;
+    color: #000000 !important;
+}
+
+.git-bg {
+    background-color: #f05032;
+    color: #ffffff !important;
+}
+
+.github-bg {
+    background-color: #24292e;
+    color: #ffffff !important;
+}
+
+
+/* Skill Name */
 
 .skill-name {
     font-size: 1.25rem;
@@ -399,8 +560,11 @@ background-color: #17635f;
     margin-bottom: 15px;
 }
 
-/* Dynamic Level Badges */
+
+/* Skill Badges */
+
 .status-badge {
+    display: inline-block;
     padding: 8px 16px;
     border-radius: 20px;
     font-size: 0.85rem;
@@ -421,9 +585,14 @@ background-color: #17635f;
     background-color: rgba(244, 190, 65, 0.15) !important;
     color: #b58105 !important;
 }
-/* Projects Section Master Styling with your Brand Theme #074643 */
+
+
+/* =========================================================
+   PROJECTS SECTION
+========================================================= */
+
 .projects-section {
-    background-color: #074643 !important; /* Dark theme contrast base */
+    background-color: #074643 !important;
     padding: 80px 0;
 }
 
@@ -431,30 +600,31 @@ background-color: #17635f;
     color: #a0b2b1;
 }
 
-/* Individual Slide Cards Architecture mimicking your image #1a2a29 structure */
+
+/* Project Card */
+
 .project-slide-card {
     background-color: #1a5f5c;
     border-radius: 12px;
     padding: 40px 30px;
-    min-height: 280px;
+    min-height: 400px;
     position: relative;
     overflow: hidden;
     border: 1px solid rgba(255, 255, 255, 0.05);
     transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
 }
 
-/* Big Number Layout matching reference graphic */
-.project-number {
-    font-size: 5rem;
-    font-weight: 800;
-    color: rgba(255, 255, 255, 0.1);
-    position: absolute;
-    bottom: -10px;
-    left: 20px;
-    line-height: 1;
-    user-select: none;
-    transition: color 0.3s ease;
+.project-slide-card:hover {
+    transform: translateY(-5px);
+    border-color: #ffffff;
+    background-color: #233534;
 }
+
+
+/* Project Heading */
 
 .project-heading {
     font-size: 1.35rem;
@@ -473,31 +643,35 @@ background-color: #17635f;
     z-index: 2;
 }
 
-/* Active Highlight Card State matching your Lime-Green item reference */
-.project-slide-card.active-accent {
-    background-color:#1a5f5c ; /* Custom Lime Green matching Image block */
+
+/* Project Image */
+
+.project-img-link {
+    display: block;
+    overflow: hidden;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+    z-index: 5;
+    position: relative;
 }
 
-.project-slide-card.active-accent .project-heading {
-    color: #000000;
-}
-
-.project-slide-card.active-accent .project-subtext {
-    color: #222222;
-}
-
-.project-slide-card.active-accent .project-number {
-    color: rgba(0, 0, 0, 0.15);
-}
-
-/* Hover Interactive Animations */
-.project-slide-card:hover {
-    transform: translateY(-5px);
+.project-img-link:hover {
+    transform: scale(1.03);
     border-color: #ffffff;
-    background-color: #233534;
 }
 
-/* Custom Navigation Arrow Icons */
+.project-card-img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    display: block;
+}
+
+
+/* Carousel Controls */
+
 .custom-control {
     width: 5%;
     opacity: 0.8;
@@ -507,7 +681,9 @@ background-color: #17635f;
     opacity: 1;
 }
 
-/* Carousel Bullet Dots Style Customization */
+
+/* Carousel Indicators */
+
 .custom-indicators [data-bs-target] {
     width: 10px;
     height: 10px;
@@ -518,20 +694,28 @@ background-color: #17635f;
 }
 
 .custom-indicators .active {
-    background-color: #a3e635 !important; /* Active indicator turns lime green */
+    background-color: #a3e635 !important;
 }
-/* Contact Section Core Architecture */
+
+
+/* =========================================================
+   CONTACT
+========================================================= */
+
 .contact-section {
     padding: 80px 0;
+    background-color: #ffffff;
 }
 
 .contact-main-title {
     font-size: 2.2rem;
     font-weight: 700;
-    color: #074643 ;
+    color: #074643;
 }
 
-/* Perfect Soft Circular Vector Image Container */
+
+/* Contact Image */
+
 .contact-illustration-wrapper {
     width: 320px;
     height: 320px;
@@ -546,14 +730,18 @@ background-color: #17635f;
     width: 100%;
     height: 100%;
     object-fit: cover;
+    display: block;
 }
 
-/* Form Inputs Styling matching your shared structure with your #074643 border tint */
+
+/* Contact Form */
+
 .custom-label {
     font-weight: 600;
     color: #074643;
     font-size: 0.95rem;
     margin-bottom: 8px;
+    display: block;
 }
 
 .custom-input {
@@ -575,7 +763,9 @@ background-color: #17635f;
     box-shadow: 0 0 0 3px rgba(7, 70, 67, 0.1) !important;
 }
 
-/* Primary Form Action Button configured to match your brand style layout */
+
+/* Contact Button */
+
 .btn-contact-send {
     background-color: #074643;
     color: #ffffff;
@@ -593,162 +783,444 @@ background-color: #17635f;
     box-shadow: 0 4px 15px rgba(7, 70, 67, 0.3);
 }
 
-/* Integrated Custom Branded Footer Component matching the layout structure */
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
 .portfolio-footer {
     background-color: #074643;
-      padding: 45px 0 20px;
+    padding: 45px 0 20px;
     font-size: 0.95rem;
     font-weight: 500;
 }
-/* Project Cards adjustments */
-.project-slide-card {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-}
-
-/* Image wrapper link hover automation */
-.project-img-link {
-    overflow: hidden;
-    border-radius: 8px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    transition: transform 0.3s ease, border-color 0.3s ease;
-    z-index: 5; /* Card layer focus safety click background handler */
-    position: relative;
-}
-
-.project-img-link:hover {
-    transform: scale(1.03);
-    border-color: #074643;
-}
-
-.project-slide-card.active-accent .project-img-link:hover {
-    border-color: #ffffff;
-}
-
-/* Image behavior inside container grid */
-.project-card-img {
-    width: 100%;
-    height: 160px;
-    object-fit: cover; /* Image proportions control properties automatically cropped */
-    display: block;
-}
-
 
 .footer-text {
-  font-size: 15px;
-  color: #ffffff;
+    font-size: 15px;
+    color: #ffffff;
 }
 
 .footer-text strong {
-  color: #3c8581;
+    color: #8fd3c7;
 }
 
 
 /* Social Icons */
+
 .footer-socials {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  gap: 15px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 15px;
 }
 
 .footer-social-link {
-  width: 45px;
-  height: 45px;
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  border-radius: 50%;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  color: white;
-  text-decoration: none;
-
-  font-size: 21px;
-
-  transition: all 0.3s ease;
+    width: 45px;
+    height: 45px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 21px;
+    transition: all 0.3s ease;
 }
 
 .footer-social-link:hover {
-  background: #1a5f5c;
-  color: #8fd3c7;
-  border-color: #8fd3c7;
-  transform: translateY(-4px);
+    background: #1a5f5c;
+    color: #8fd3c7;
+    border-color: #8fd3c7;
+    transform: translateY(-4px);
 }
 
 
-/* Bottom */
+/* Footer Bottom */
+
 .footer-bottom {
-  margin-top: 30px;
-  padding-top: 20px;
-  border-top: 1px solid rgba(255, 255, 255, 0.15);
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .footer-bottom p {
-  font-size: 13px;
-  color: rgba(255, 255, 255, 0.65);
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.65);
 }
 
 
-/* Mobile */
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 991px) {
+
+    /* Navbar */
+
+    .navbar {
+        padding: 1rem 2rem;
+    }
+
+    .navbar-nav {
+        gap: 5px;
+        margin-top: 15px;
+    }
+
+    .navbar-nav .nav-item .nav-link {
+        text-align: center;
+    }
+
+
+    /* Hero */
+
+    .hero-section {
+        padding: 70px 0;
+    }
+
+    .profile-img-container {
+        width: 300px;
+        height: 300px;
+    }
+
+
+    /* About */
+
+    .about-img-container {
+        width: 300px;
+        height: 300px;
+    }
+
+
+    /* Contact */
+
+    .contact-illustration-wrapper {
+        width: 280px;
+        height: 280px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
 @media (max-width: 767px) {
 
-  .footer-socials {
-    justify-content: center;
-  }
+    /* Navbar */
 
-  .footer-text {
-    text-align: center;
-  }
+    .navbar {
+        padding: 1rem 1.2rem;
+    }
 
-}.navbar-nav .nav-item .nav-link {
-    position: relative;
-    padding-bottom: 5px; 
+    .logo {
+        width: 120px;
+        min-width: unset;
+    }
+
+
+    /* Hero */
+
+    .hero-section {
+        padding: 60px 15px;
+        min-height: auto;
+        text-align: center;
+    }
+
+    .hero-title {
+        font-size: 2rem;
+        line-height: 1.3;
+    }
+
+    .iam {
+        font-size: 1.5rem;
+    }
+
+    .hero-desc {
+        font-size: 1rem;
+        line-height: 1.7;
+    }
+
+
+    /* Hero Buttons */
+
+    .hero-section .d-flex {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .btn-custom-primary,
+    .btn-custom-secondary {
+        margin-right: 0;
+        padding: 10px 22px;
+        font-size: 0.9rem;
+    }
+
+
+    /* Profile */
+
+    .profile-img-container {
+        width: 260px;
+        height: 260px;
+        border-width: 6px;
+    }
+
+
+    /* About */
+
+    .about-section {
+        padding: 60px 15px !important;
+    }
+
+    .about-img-container {
+        width: 260px;
+        height: 260px;
+    }
+
+    .about-title {
+        font-size: 1.9rem;
+        text-align: center;
+    }
+
+    .about-desc {
+        font-size: 1rem;
+        text-align: center;
+    }
+
+    .about-section .d-flex {
+        justify-content: center;
+    }
+
+    .skills-badge {
+        justify-content: center;
+        width: 100%;
+    }
+
+
+    /* Skills */
+
+    .skills-section {
+        padding: 60px 15px;
+    }
+
+    .section-title {
+        font-size: 1.9rem;
+    }
+
+    .skill-card {
+        padding: 25px 15px;
+    }
+
+
+    /* Projects */
+
+    .projects-section {
+        padding: 60px 15px;
+    }
+
+    .project-slide-card {
+        padding: 30px 20px;
+        min-height: auto;
+    }
+
+    .project-heading {
+        font-size: 1.2rem;
+    }
+
+    .project-card-img {
+        height: 180px;
+    }
+
+    .custom-control {
+        width: 10%;
+    }
+
+    .carousel-inner {
+        padding-left: 25px !important;
+        padding-right: 25px !important;
+    }
+
+
+    /* Contact */
+
+    .contact-section {
+        padding: 60px 15px;
+    }
+
+    .contact-main-title {
+        font-size: 1.9rem;
+    }
+
+    .contact-illustration-wrapper {
+        width: 250px;
+        height: 250px;
+    }
+
+    .contact-form {
+        margin-top: 20px;
+    }
+
+    .btn-contact-send {
+        width: 100%;
+    }
+
+
+    /* Footer */
+
+    .portfolio-footer {
+        padding: 40px 15px 20px;
+    }
+
+    .footer-socials {
+        justify-content: center;
+        margin-top: 15px;
+    }
+
+    .footer-text {
+        text-align: center;
+    }
+
 }
 
-/* 1. Line starts in the exact middle (50%) with 0 width */
-.navbar-nav .nav-item .nav-link::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px; 
-    bottom: 0;
-    left: 50%; 
-    background-color: #ffffff; 
-    transition: width 0.3s ease, left 0.3s ease; 
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+    /* Navbar */
+
+    .navbar {
+        padding: 0.8rem 1rem;
+    }
+
+
+    /* Hero */
+
+    .hero-section {
+        padding: 50px 12px;
+    }
+
+    .hero-title {
+        font-size: 1.7rem;
+    }
+
+    .iam {
+        font-size: 1.3rem;
+    }
+
+    .hero-desc {
+        font-size: 0.95rem;
+    }
+
+
+    /* Profile */
+
+    .profile-img-container {
+        width: 220px;
+        height: 220px;
+    }
+
+
+    /* About Image */
+
+    .about-img-container {
+        width: 220px;
+        height: 220px;
+    }
+
+
+    /* Titles */
+
+    .about-title,
+    .section-title,
+    .contact-main-title {
+        font-size: 1.7rem;
+    }
+
+
+    /* Skills */
+
+    .skills-badge {
+        padding: 10px;
+        gap: 10px;
+    }
+
+    .skill-item {
+        font-size: 0.85rem;
+    }
+
+
+    /* Projects */
+
+    .project-card-img {
+        height: 150px;
+    }
+
+
+    /* Contact */
+
+    .contact-illustration-wrapper {
+        width: 220px;
+        height: 220px;
+    }
+
+
+    /* Footer */
+
+    .footer-social-link {
+        width: 42px;
+        height: 42px;
+        font-size: 19px;
+    }
+
 }
 
-/* 2. On hover, it expands equally to both sides to stay centered */
-.navbar-nav .nav-item .nav-link:hover::after {
-    width: 60%;  /* Total width of the short line */
-    left: 20%;   /* Kept at 20% to keep it perfectly centered */
+
+/* =========================================================
+   EDUCATION MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .timeline-container {
+        padding-left: 40px;
+    }
+
+    .timeline-container::before {
+        left: 15px;
+    }
+
+    .timeline-icon,
+    .timeline-icon-grad {
+        left: -43px;
+        width: 34px;
+        height: 34px;
+        font-size: 0.9rem;
+    }
+
+    .edu-arrow {
+        display: none;
+    }
+
+    .edu-degree {
+        width: 100%;
+        margin-bottom: 5px;
+    }
+
+    .timeline-content {
+        padding-left: 10px;
+    }
+
+    .edu-institute {
+        font-size: 1rem;
+    }
+
+    .edu-year {
+        font-size: 0.9rem;
+    }
+
 }
-/* Color dots for Git and GitHub */
-
-/* Individual Branding Colors for Git and GitHub */
-.git-bg { 
-    background-color: #f05032; 
-    color: #ffffff !important; 
-}
-
-.github-bg { 
-    background-color: #24292e; 
-    color: #ffffff !important; 
-}
-
-/* Fix text and badge color properties inside card hover state */
-.skill-card:hover .skill-name {
-    color: #ffffff !important;
-}
-
-.skill-card:hover .status-badge {
-    background-color: rgba(255, 255, 255, 0.2) !important;
-    color: #ffffff !important;
-}
-
-
-
-
