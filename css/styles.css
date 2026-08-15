@@ -1,0 +1,496 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #ffffff;
+    color: #333333;
+}
+
+/* Navbar Custom Styling */
+.navbar {
+    background-color: #074643 !important;
+    padding: 1rem 4rem;
+}
+
+.navbar-brand, .nav-link {
+    color: white !important;
+    font-weight: 500;
+}
+
+.nav-link:hover {
+    color: #050505 !important;
+}
+
+/* Hero Section */
+.hero-section {
+    padding: 80px 0;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+}
+
+.highlight-text {
+    color: #074643;
+    font-weight: 700;
+}
+
+.hero-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+
+.hero-desc {
+    font-size: 1.2rem;
+    color: #555555;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+}
+
+/* Buttons */
+.btn-custom-primary {
+    background-color: #074643;
+    color: white;
+    font-weight: 500;
+    border: none;
+    padding: 10px 30px;
+    border-radius: 30px;
+    margin-right: 15px;
+    transition: all 0.3s ease;
+       display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    
+}
+
+.btn-custom-primary:hover {
+    background-color: #17635f;
+    color: #fffdfd;
+}
+.btn-custom-primary:hover i {
+   transform: translateX(10px);
+   transition: all .5s linear;
+}
+
+.btn-custom-secondary {
+    background-color: transparent;
+    color: #074643;
+    font-weight: 500;
+    border: 2px solid #074643;
+    padding: 10px 30px;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+}
+
+.btn-custom-secondary:hover {
+background-color: #17635f;
+    color: #fffdfd;
+}
+
+
+
+/* Profile Image Container */
+.profile-img-container {
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 8px solid #074643;
+    margin: 0 auto;
+}
+
+.profile-img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.logo{
+    width: 20%;
+}
+.iam{
+    font-size: 2rem;
+}
+/* About Me Section Styling */
+.about-section {
+    background-color: #ffffff;
+    border-top: 2px solid #074643;
+    border-bottom: 2px solid #074643;
+}
+
+.about-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #000000;
+}
+
+.about-desc {
+    font-size: 1.1rem;
+    color: #555555;
+    font-weight: 500;
+    line-height: 1.8;
+}
+
+/* Perfect Circular Image Wrapper like Image */
+.about-img-container {
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid #cccccc;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.about-img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* Badges Styling inspired by layout */
+.info-badge {
+    border: 1px solid #cccccc;
+    padding: 10px 20px;
+    border-radius: 15px;
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+.font-teal {
+    color: #074643;
+}
+
+.skills-badge {
+    border: 1px solid #cccccc;
+    padding: 10px 20px;
+    border-radius: 15px;
+    display: inline-flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.skill-item {
+    font-size: 0.95rem;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: #074643;
+}
+
+/* Visual color dots acting as tech indicators */
+.skill-item::before {
+    content: '';
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.html-dot::before { background-color: #e34c26; } /* HTML Orange */
+.css-dot::before { background-color: #264de4; }  /* CSS Blue */
+.bs-dot::before { background-color: #563d7c; }   /* Bootstrap Purple */
+
+
+/* Education Timeline Main Container */
+.education-section {
+    background-color: #fcfcfc !important;
+}
+
+.section-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #000000;
+}
+
+.timeline-container {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    padding-left: 50px;
+}
+
+/* Vertical Timeline Track Line */
+.timeline-container::before {
+    content: '';
+    position: absolute;
+    left: 20px;
+    top: 15px;
+    width: 3px;
+    height: calc(100% - 70px);
+    background-color: #074643;
+}
+
+/* Individual Timeline Card Entry */
+.timeline-item {
+    position: relative;
+    margin-bottom: 50px;
+}
+
+/* Yellow circular icons matching your shared diagram template */
+.timeline-icon, .timeline-icon-grad {
+    position: absolute;
+    left: -50px;
+    top: 5px;
+    width: 44px;
+    height: 44px;
+    background-color: #f4be41;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    z-index: 2;
+}
+
+.timeline-content {
+    background: transparent;
+    padding-left: 20px;
+}
+
+.edu-degree {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #000000;
+    min-width: 180px;
+}
+
+.edu-arrow {
+    font-size: 1.5rem;
+    color: #000000;
+    margin: 0 25px;
+}
+
+.edu-institute {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: #111111;
+    margin: 0;
+}
+
+.edu-year {
+    font-size: 1rem;
+    color: #555555;
+    font-weight: 500;
+    margin: 3px 0 0 0;
+}
+
+/* Responsive Alignment Fix for Smaller Devices */
+@media (max-width: 768px) {
+    .timeline-container {
+        padding-left: 40px;
+    }
+    .timeline-container::before {
+        left: 15px;
+    }
+    .timeline-icon, .timeline-icon-grad {
+        left: -43px;
+        width: 34px;
+        height: 34px;
+        font-size: 0.9rem;
+    }
+    .edu-arrow {
+        display: none;
+    }
+    .edu-degree {
+        width: 100%;
+        margin-bottom: 5px;
+    }
+}
+/* Skills Section Grid Styling */
+.skills-section {
+    padding: 80px 0;
+}
+
+.skill-card {
+    background: #ffffff;
+    border: 1px solid #e9ecef;
+    border-radius: 16px;
+    padding: 30px 20px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+}
+
+.skill-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(7, 70, 67, 0.1);
+    border-color: #074643;
+}
+
+/* Custom Highlight Effect for currently learning technology */
+.learning-glow {
+    border: 1px dashed #f4be41 !important;
+    background-color: rgba(244, 190, 65, 0.02) !important;
+}
+
+.learning-glow:hover {
+    border-color: #074643 !important;
+}
+
+/* Central Skill Icon Badges */
+/* Purane .skill-icon code ko hata kar ye paste karein */
+.skill-icon {
+    width: 85px;          /* Size thoda bada kiya taake text andar aa jaye */
+    height: 85px;
+    margin: 0 auto 20px auto;
+    border-radius: 14px;
+    display: flex;
+    flex-direction: column; /* Text aur number ko upar-niche align karne ke liye */
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;   /* Font size ko barabar balance kiya */
+    font-weight: 700;
+    color: white;
+    padding: 5px;
+    text-align: center;
+    word-break: break-word; /* Agar text bada ho to automatic handle ho jaye */
+    line-height: 1.2;
+}
+
+/* Icons ke andar ka margin set karne ke liye */
+.skill-icon span {
+    display: block;
+    width: 100%;
+}
+
+
+/* Distinctive Branding Skill Identity Colors */
+.html-bg { background-color: #e34c26; }
+.css-bg  { background-color: #264de4; }
+.bs-bg   { background-color: #563d7c; }
+.js-bg   { background-color: #f7df1e; color: #000000 !important; }
+
+.skill-name {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #111111;
+    margin-bottom: 15px;
+}
+
+/* Dynamic Level Badges */
+.status-badge {
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.badge-expert {
+    background-color: rgba(7, 70, 67, 0.1) !important;
+    color: #074643 !important;
+}
+
+.badge-intermediate {
+    background-color: rgba(70, 130, 180, 0.1) !important;
+    color: #4682b4 !important;
+}
+
+.badge-learning {
+    background-color: rgba(244, 190, 65, 0.15) !important;
+    color: #b58105 !important;
+}
+/* Projects Section Master Styling with your Brand Theme #074643 */
+.projects-section {
+    background-color: #0c1a19 !important; /* Dark theme contrast base */
+    padding: 80px 0;
+}
+
+.text-light-muted {
+    color: #a0b2b1;
+}
+
+/* Individual Slide Cards Architecture mimicking your image structure */
+.project-slide-card {
+    background-color: #1a2a29;
+    border-radius: 12px;
+    padding: 40px 30px;
+    min-height: 280px;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
+}
+
+/* Big Number Layout matching reference graphic */
+.project-number {
+    font-size: 5rem;
+    font-weight: 800;
+    color: rgba(255, 255, 255, 0.1);
+    position: absolute;
+    bottom: -10px;
+    left: 20px;
+    line-height: 1;
+    user-select: none;
+    transition: color 0.3s ease;
+}
+
+.project-heading {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 15px;
+    position: relative;
+    z-index: 2;
+}
+
+.project-subtext {
+    font-size: 0.95rem;
+    color: #a0b2b1;
+    line-height: 1.6;
+    position: relative;
+    z-index: 2;
+}
+
+/* Active Highlight Card State matching your Lime-Green item reference */
+.project-slide-card.active-accent {
+    background-color: #a3e635; /* Custom Lime Green matching Image block */
+}
+
+.project-slide-card.active-accent .project-heading {
+    color: #000000;
+}
+
+.project-slide-card.active-accent .project-subtext {
+    color: #222222;
+}
+
+.project-slide-card.active-accent .project-number {
+    color: rgba(0, 0, 0, 0.15);
+}
+
+/* Hover Interactive Animations */
+.project-slide-card:hover {
+    transform: translateY(-5px);
+    border-color: #a3e635;
+}
+
+/* Custom Navigation Arrow Icons */
+.custom-control {
+    width: 5%;
+    opacity: 0.8;
+}
+
+.custom-control:hover {
+    opacity: 1;
+}
+
+/* Carousel Bullet Dots Style Customization */
+.custom-indicators [data-bs-target] {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #556665;
+    border: none;
+    margin: 0 6px;
+}
+
+.custom-indicators .active {
+    background-color: #a3e635 !important; /* Active indicator turns lime green */
+}
+
+
+
+
