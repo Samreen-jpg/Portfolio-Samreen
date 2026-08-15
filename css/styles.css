@@ -1,5 +1,8 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
 body {
-    font-family: 'Poppins', sans-serif;
+  font-family: "Open Sans", sans-serif !important;
     background-color: #ffffff;
     color: #333333;
 }
@@ -15,9 +18,6 @@ body {
     font-weight: 500;
 }
 
-.nav-link:hover {
-    color: #050505 !important;
-}
 
 /* Hero Section */
 .hero-section {
@@ -119,7 +119,7 @@ background-color: #17635f;
 .about-title {
     font-size: 2.2rem;
     font-weight: 700;
-    color: #000000;
+    color: #074643;
 }
 
 .about-desc {
@@ -193,6 +193,15 @@ background-color: #17635f;
 .css-dot::before { background-color: #264de4; }  /* CSS Blue */
 .bs-dot::before { background-color: #563d7c; }   /* Bootstrap Purple */
 
+/* New Git and GitHub dots added below */
+.git-dot::before { background-color: #f05032; }   /* Git Red/Orange */
+.github-dot::before { background-color: #24292e; }/* GitHub Black */
+
+
+.html-dot::before { background-color: #e34c26; } /* HTML Orange */
+.css-dot::before { background-color: #264de4; }  /* CSS Blue */
+.bs-dot::before { background-color: #563d7c; }   /* Bootstrap Purple */
+
 
 /* Education Timeline Main Container */
 .education-section {
@@ -202,7 +211,7 @@ background-color: #17635f;
 .section-title {
     font-size: 2.2rem;
     font-weight: 700;
-    color: #000000;
+    color: #074643;
 }
 
 .timeline-container {
@@ -317,8 +326,28 @@ background-color: #17635f;
 .skill-card:hover {
     transform: translateY(-8px);
     box-shadow: 0 12px 24px rgba(7, 70, 67, 0.1);
-    border-color: #074643;
+    border-color: #f6fafa;
+    background-color: #1a5f5c;
 }
+/* Fix: Removed the space between the classes and added !important to override the glow background */
+.skill-card.learning-glow:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(7, 70, 67, 0.1);
+    border-color: #f6fafa !important; /* Force border color change */
+    background-color: #1a5f5c !important; /* Force dark green background change */
+}
+
+/* Ensure the text turns white on hover just like the other cards */
+.skill-card.learning-glow:hover .skill-name {
+    color: #ffffff !important;
+}
+
+/* Ensure the 'Learning Currently' badge adapts nicely to the dark background */
+.skill-card.learning-glow:hover .badge-learning {
+    background-color: rgba(255, 255, 255, 0.2) !important;
+    color: #ffffff !important;
+}
+
 
 /* Custom Highlight Effect for currently learning technology */
 .learning-glow {
@@ -394,7 +423,7 @@ background-color: #17635f;
 }
 /* Projects Section Master Styling with your Brand Theme #074643 */
 .projects-section {
-    background-color: #0c1a19 !important; /* Dark theme contrast base */
+    background-color: #074643 !important; /* Dark theme contrast base */
     padding: 80px 0;
 }
 
@@ -402,9 +431,9 @@ background-color: #17635f;
     color: #a0b2b1;
 }
 
-/* Individual Slide Cards Architecture mimicking your image structure */
+/* Individual Slide Cards Architecture mimicking your image #1a2a29 structure */
 .project-slide-card {
-    background-color: #1a2a29;
+    background-color: #1a5f5c;
     border-radius: 12px;
     padding: 40px 30px;
     min-height: 280px;
@@ -446,7 +475,7 @@ background-color: #17635f;
 
 /* Active Highlight Card State matching your Lime-Green item reference */
 .project-slide-card.active-accent {
-    background-color: #a3e635; /* Custom Lime Green matching Image block */
+    background-color:#1a5f5c ; /* Custom Lime Green matching Image block */
 }
 
 .project-slide-card.active-accent .project-heading {
@@ -464,7 +493,8 @@ background-color: #17635f;
 /* Hover Interactive Animations */
 .project-slide-card:hover {
     transform: translateY(-5px);
-    border-color: #a3e635;
+    border-color: #ffffff;
+    background-color: #233534;
 }
 
 /* Custom Navigation Arrow Icons */
@@ -489,6 +519,234 @@ background-color: #17635f;
 
 .custom-indicators .active {
     background-color: #a3e635 !important; /* Active indicator turns lime green */
+}
+/* Contact Section Core Architecture */
+.contact-section {
+    padding: 80px 0;
+}
+
+.contact-main-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #074643 ;
+}
+
+/* Perfect Soft Circular Vector Image Container */
+.contact-illustration-wrapper {
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto;
+    background-color: #f9f9f9;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.contact-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Form Inputs Styling matching your shared structure with your #074643 border tint */
+.custom-label {
+    font-weight: 600;
+    color: #074643;
+    font-size: 0.95rem;
+    margin-bottom: 8px;
+}
+
+.custom-input {
+    border: 1px solid #1053508f !important;
+    border-radius: 12px !important;
+    padding: 12px 18px !important;
+    font-size: 0.95rem;
+    color: #333333;
+    transition: all 0.3s ease !important;
+}
+
+.custom-input::placeholder {
+    color: #bbbbbb;
+}
+
+.custom-input:focus {
+    outline: none !important;
+    border-color: #074643 !important;
+    box-shadow: 0 0 0 3px rgba(7, 70, 67, 0.1) !important;
+}
+
+/* Primary Form Action Button configured to match your brand style layout */
+.btn-contact-send {
+    background-color: #074643;
+    color: #ffffff;
+    font-weight: 600;
+    border: none;
+    padding: 12px 50px;
+    border-radius: 12px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.btn-contact-send:hover {
+    background-color: #053331;
+    color: #ffffff;
+    box-shadow: 0 4px 15px rgba(7, 70, 67, 0.3);
+}
+
+/* Integrated Custom Branded Footer Component matching the layout structure */
+.portfolio-footer {
+    background-color: #074643;
+      padding: 45px 0 20px;
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+/* Project Cards adjustments */
+.project-slide-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+/* Image wrapper link hover automation */
+.project-img-link {
+    overflow: hidden;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+    z-index: 5; /* Card layer focus safety click background handler */
+    position: relative;
+}
+
+.project-img-link:hover {
+    transform: scale(1.03);
+    border-color: #074643;
+}
+
+.project-slide-card.active-accent .project-img-link:hover {
+    border-color: #ffffff;
+}
+
+/* Image behavior inside container grid */
+.project-card-img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover; /* Image proportions control properties automatically cropped */
+    display: block;
+}
+
+
+.footer-text {
+  font-size: 15px;
+  color: #ffffff;
+}
+
+.footer-text strong {
+  color: #3c8581;
+}
+
+
+/* Social Icons */
+.footer-socials {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 15px;
+}
+
+.footer-social-link {
+  width: 45px;
+  height: 45px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: white;
+  text-decoration: none;
+
+  font-size: 21px;
+
+  transition: all 0.3s ease;
+}
+
+.footer-social-link:hover {
+  background: #1a5f5c;
+  color: #8fd3c7;
+  border-color: #8fd3c7;
+  transform: translateY(-4px);
+}
+
+
+/* Bottom */
+.footer-bottom {
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.footer-bottom p {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+
+/* Mobile */
+@media (max-width: 767px) {
+
+  .footer-socials {
+    justify-content: center;
+  }
+
+  .footer-text {
+    text-align: center;
+  }
+
+}.navbar-nav .nav-item .nav-link {
+    position: relative;
+    padding-bottom: 5px; 
+}
+
+/* 1. Line starts in the exact middle (50%) with 0 width */
+.navbar-nav .nav-item .nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px; 
+    bottom: 0;
+    left: 50%; 
+    background-color: #ffffff; 
+    transition: width 0.3s ease, left 0.3s ease; 
+}
+
+/* 2. On hover, it expands equally to both sides to stay centered */
+.navbar-nav .nav-item .nav-link:hover::after {
+    width: 60%;  /* Total width of the short line */
+    left: 20%;   /* Kept at 20% to keep it perfectly centered */
+}
+/* Color dots for Git and GitHub */
+
+/* Individual Branding Colors for Git and GitHub */
+.git-bg { 
+    background-color: #f05032; 
+    color: #ffffff !important; 
+}
+
+.github-bg { 
+    background-color: #24292e; 
+    color: #ffffff !important; 
+}
+
+/* Fix text and badge color properties inside card hover state */
+.skill-card:hover .skill-name {
+    color: #ffffff !important;
+}
+
+.skill-card:hover .status-badge {
+    background-color: rgba(255, 255, 255, 0.2) !important;
+    color: #ffffff !important;
 }
 
 
