@@ -1224,3 +1224,84 @@ section {
     }
 
 }
+
+.services-section {
+    background-color: #fcfcfc !important; /* Soft backdrop tone matching your layout */
+    padding: 80px 0;
+    border-bottom: 2px solid #074643;
+}
+
+.services-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #074643;
+    margin-bottom: 10px;
+}
+
+.services-subtitle {
+    font-size: 1.1rem;
+    color: #555555;
+    font-weight: 500;
+}
+
+.service-card {
+    background: #ffffff;
+    border: 1px solid #e9ecef;
+    border-radius: 16px;
+    padding: 40px 25px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); /* Matches your custom skill-card motion profile */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    height: 100%;
+}
+
+/* Hover Interaction Layer shifting directly to primary theme colors */
+.service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(7, 70, 67, 0.1);
+    border-color: #f6fafa;
+    background-color: #074643;
+}
+
+/* Icon Container settings */
+.service-icon-box {
+    width: 70px;
+    height: 70px;
+    background-color: rgba(7, 70, 67, 0.08); /* Faint highlight tint */
+    color: #074643;
+    font-size: 2.2rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+/* Changes to Gold Accent color on layout container mouseover */
+.service-card:hover .service-icon-box {
+    background-color: #f4be41; /* Matches your educational circle badge gold tint */
+    color: #000000;
+}
+
+.service-card-title {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: #000000;
+    transition: color 0.3s ease;
+}
+
+.service-card-text {
+    font-size: 1rem;
+    color: #555555;
+    line-height: 1.7;
+    transition: color 0.3s ease;
+    margin-bottom: 0;
+}
+
+/* Text inversion shifts for dark primary card hover layouts */
+.service-card:hover .service-card-title {
+    color: #ffffff;
+}
+
+.service-card:hover .service-card-text {
+    color: #e0f2f1; /* Crisp contrast text readable tone */
+}
