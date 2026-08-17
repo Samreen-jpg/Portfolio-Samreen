@@ -694,7 +694,7 @@ section {
 }
 
 .custom-indicators .active {
-    background-color: #a3e635 !important;
+    background-color: #000000 !important;
 }
 
 
@@ -1226,6 +1226,7 @@ section {
 }
 
 .services-section {
+        border-top: 2px solid rgb(7, 70, 67);
     background-color: #fcfcfc !important; /* Soft backdrop tone matching your layout */
     padding: 80px 0;
     border-bottom: 2px solid #074643;
@@ -1278,8 +1279,8 @@ section {
 
 /* Changes to Gold Accent color on layout container mouseover */
 .service-card:hover .service-icon-box {
-    background-color: #f4be41; /* Matches your educational circle badge gold tint */
-    color: #000000;
+    background-color: #1a5f5c; /* Matches your educational circle badge gold tint */
+    color: #fcf9f9;
 }
 
 .service-card-title {
